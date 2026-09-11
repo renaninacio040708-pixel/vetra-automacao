@@ -94,13 +94,35 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 .reveal, .reveal-up { opacity: 0; transform: translateY(36px); }
 
 /* SERVICES */
-.services { padding: 130px 0 100px; background: var(--bg-alt); }
-.service-grid { max-width: 1320px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.service-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 34px 28px; transition: border-color .35s, transform .35s var(--ease); }
-.service-card:hover { border-color: rgba(255,106,31,.4); transform: translateY(-6px); }
-.service-icon { width: 48px; height: 48px; border-radius: 8px; background: rgba(255,106,31,.12); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; color: var(--accent); }
-.service-card h3 { font-size: 19px; margin-bottom: 12px; }
-.service-card p { color: var(--text-dim); font-size: 14.5px; line-height: 1.6; }
+.services { padding: 130px 0 60px; background: var(--bg-alt); }
+
+.service-bento { max-width: 1320px; margin: 0 auto 20px; padding: 0 40px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; align-items: stretch; }
+.service-feature {
+  position: relative; min-height: 420px; border-radius: 10px; overflow: hidden;
+  background-size: cover; background-position: center;
+  display: flex; align-items: flex-end; transition: transform .4s var(--ease);
+}
+.service-feature:hover { transform: translateY(-4px); }
+.service-feature-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(12,14,16,.95) 10%, rgba(12,14,16,.55) 55%, rgba(12,14,16,.15) 100%); }
+.service-feature-content { position: relative; z-index: 1; padding: 40px; }
+.service-feature-tag { display: inline-block; background: var(--accent); color: var(--bg); font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 16px; }
+.service-feature-content h3 { font-size: 24px; margin-bottom: 12px; }
+.service-feature-content p { color: #d6d9dc; font-size: 15px; line-height: 1.6; max-width: 440px; }
+.service-side {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 40px 34px; display: flex; flex-direction: column; justify-content: center;
+  transition: border-color .35s;
+}
+.service-side:hover { border-color: rgba(255,106,31,.4); }
+.service-side h3 { font-size: 22px; margin-bottom: 14px; }
+.service-side p { color: var(--text-dim); font-size: 15px; line-height: 1.7; }
+
+.service-rows { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+.service-row { display: flex; gap: 22px; align-items: flex-start; padding: 26px 0; border-top: 1px solid var(--line); }
+.service-row:last-child { border-bottom: 1px solid var(--line); }
+.service-row svg { color: var(--accent); flex-shrink: 0; margin-top: 3px; }
+.service-row h3 { font-size: 17px; margin-bottom: 6px; }
+.service-row p { color: var(--text-dim); font-size: 14.5px; line-height: 1.6; max-width: 640px; }
 
 /* SECTORS strip */
 .sectors { padding: 70px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -197,7 +219,9 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   .nav-burger { display: flex; }
   .nav-mobile { display: flex; }
   .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .service-grid, .process-grid, .benefit-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid, .benefit-grid { grid-template-columns: 1fr 1fr; }
+  .service-bento { grid-template-columns: 1fr; }
+  .service-feature { min-height: 320px; }
   .footer-inner { grid-template-columns: 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
@@ -206,5 +230,5 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
   .job-card { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 560px) {
-  .service-grid, .process-grid, .benefit-grid { grid-template-columns: 1fr; }
+  .process-grid, .benefit-grid { grid-template-columns: 1fr; }
 }

@@ -48,7 +48,7 @@ document.querySelectorAll(".reveal").forEach(el => {
 });
 
 // staggered reveal for grids of cards
-document.querySelectorAll(".service-grid, .process-grid, .benefit-grid, .jobs-list").forEach(grid => {
+document.querySelectorAll(".service-bento, .service-rows, .process-grid, .benefit-grid, .jobs-list").forEach(grid => {
   gsap.utils.toArray(grid.children).forEach((card, i) => {
     gsap.to(card, {
       opacity: 1, y: 0, duration: .9, ease: "power3.out", delay: i * 0.05,
